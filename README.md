@@ -34,7 +34,7 @@ A quick and dirty experiment and example of creating Sketch components programma
  - Create a document colour: ```data-sketch-color="#cc0022"```
 
 
-The example-component.html file in this repo has marked up examples, see more info [here](https://github.com/seek-oss/html-sketchapp-cli#page-setup).
+The example-component.html file in this repo has marked up examples lifted from the [10up WP component library](https://10up.github.io/wp-component-library/) mainly with minor tweaks. To see more info on marking up components look [here](https://github.com/seek-oss/html-sketchapp-cli#page-setup).
 
 Once you have all the above installed, have a working 'html-sketchapp' command in your Terminal and some marked up code you are good to go.
 
