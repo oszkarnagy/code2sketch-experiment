@@ -1,6 +1,6 @@
-# code2sketch-experiment
+# Converting code components to Sketch
 
-A quick and dirty example of creating Sketch components programmatically from HTML code components via [html-sketchapp](https://github.com/brainly/html-sketchapp) and [html-sketchapp-cli](https://github.com/seek-oss/html-sketchapp-cli).
+A quick and dirty experiment and example of creating Sketch components programmatically from HTML code components via [html-sketchapp-cli](https://github.com/seek-oss/html-sketchapp-cli).
 
 ## High level workflow
 1. Create some code components (tech agnostic)
