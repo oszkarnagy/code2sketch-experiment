@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+
+  <head>
+    <title>Code components to Sketch experiment</title>
+
+		<!-- meta cluster -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="cleartype" content="on">
+
+
+    <style>
+
+    /* Base component style for Author card */
+
+    .author-card {
+      max-width: 650px;
+      padding: .5em;
+      overflow: hidden;
+     }
+      @media screen and (min-width: 40.625em) {
+        .author-card {
+          padding: 1em; } }
+      .author-card-author {
+        margin: 0; }
+      @media screen and (min-width: 40.625em) {
+        .author-card-info {
+          display: inline-block;
+          width: calc(100% - 120px);
+          float: right; } }
+      .author-card-pic {
+        padding-bottom: .5em;
+        text-align: center; }
+        @media screen and (min-width: 40.625em) {
+          .author-card-pic {
+            display: inline-block;
+            max-width: 100px;
+            padding-bottom: 1em; } }
+
+      .profile-image img {
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+
+
+      /* Base component style for Button link  */
+      .button {
+        text-transform: uppercase;
+        background-color: #222;
+        color: #fff;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        font-size: 0.75em;
+      }
+
+      .button:hover {
+        color: #00cc22;
+        text-decoration: underline;
+      }
+
+
+
+      /* Local styles */
+
+      body {
+        margin: 2em 4em;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 18px;
+      }
+
+
+      .colour-swatch {
+        width: 100px;
+        height: 100px;
+        margin: 0 20px 0 0;
+        display: inline-block;
+      }
+
+      .ds-component {
+        margin: 2em 0;
+        border-top: 1px solid #cdcdcd;
+      }
+
+      .ds-component--title {
+        text-transform: uppercase;
+        color: #333;
+      }
+
+      .ds-component--desc {
+        display: block;
+        margin: 0 0 2em 0;
+        font-style: italic;
+        color: #666;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <h1>Minimal design system</h1>
+    <description>This is an imaginary design system, with a couple of example components.</description>
+
+
+    <section class="ds-component">
+      <h2 class="ds-component--title">Core / Typography</h2>
+      <description class="ds-component--desc">These are text styles</description>
+
+      <h1 data-sketch-text="Header/H1">Header - H1</h1>
+      <h2 data-sketch-text="Header/H2">Header - H2</h2>
+      <h3 data-sketch-text="Header/H3">Header - H3</h3>
+      <p data-sketch-text="Paragraph/Normal">Paragraph / Normal: <br/> Bacon ipsum dolor amet cupim sirloin buffalo landjaeger, beef ribs t-bone venison kielbasa chuck kevin doner turkey.</p>
+      <p data-sketch-text="Link/Normal"><a href="#">Link text</a></p>
+    </section>
+
+
+
+    <section class="ds-component">
+
+      <h2 class="ds-component--title">Core / Colours</h2>
+      <description class="ds-component--desc">These are colour varaibles</description>
+
+      <div data-sketch-color="#cc0022" class="colour-swatch" style="background-color:#cc0022">#cc0022</div>
+      <div data-sketch-color="#00cc22" class="colour-swatch" style="background-color:#00cc22">#00cc22</div>
+      <div data-sketch-color="#0022cc" class="colour-swatch" style="background-color:#0022cc">#0022cc</div>
+
+    </section>
+
+
+
+    <section class="ds-component">
+
+      <h2 class="ds-component--title">Images / Person</h2>
+      <description class="ds-component--desc">This is a simple image component.</description>
+
+      <div data-sketch-symbol="image/person" class="profile-image">
+
+        <img itemprop="image" src="https://api.adorable.io/avatars/100/oszkar.nagy@10up.com.png" srcset="https://api.adorable.io/avatars/100/oszkar.nagy@10up.com.png 1x, https://api.adorable.io/avatars/200/oszkar.nagy@10up.com.png 2x" alt="Avatar image">
+
+      </div> <!-- /.author-card-pic -->
+
+    </section>
+
+
+
+    <section class="ds-component">
+
+      <h2 class="ds-component--title">Buttons / Basic</h2>
+      <description class="ds-component--desc">This is a simple button.</description>
+
+      <a data-sketch-symbol="buttons/basic" class="button" href="#!">Do something</a>
+
+    </section>
+
+    <section class="ds-component">
+      <h2 class="ds-component--title">Content / Author card</h2>
+      <description class="ds-component--desc">This is a more complex author card nesting other components</description>
+
+        <!-- Scoping this inside "creative work" so we can use the author schema, which feels better -->
+        <section data-sketch-symbol="content/author-card" itemscope itemtype="https://schema.org/CreativeWork">
+
+        	<div class="author-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+
+        		<div data-sketch-symbol-instance="image/person" class="profile-image author-card-pic">
+
+              <img itemprop="image" src="https://api.adorable.io/avatars/100/oszkar.nagy@10up.com.png" srcset="https://api.adorable.io/avatars/100/oszkar.nagy@10up.com.png 1x, https://api.adorable.io/avatars/200/oszkar.nagy@10up.com.png 2x" alt="Avatar image">
+
+        		</div> <!-- /.author-card-pic -->
+
+        		<div class="author-card-info">
+
+        			<h2 class="author-card-author">
+        				<a rel="author" href="#!" itemprop="url">
+        					<span data-sketch-text="Header/H2" itemprop="name">Sketchy McSketchinson</span>
+        				</a>
+        			</h2>
+
+        			<div class="author-card-bio" itemprop="description">
+
+        				<p data-sketch-text="Paragraph/Normal">Bacon ipsum dolor amet cupim sirloin buffalo landjaeger, beef ribs t-bone venison kielbasa chuck kevin doner turkey. Chuck bresaola fatback, turducken turkey sausage meatloaf filet mignon short loin shank. Tri-tip pancetta bresaola chicken t-bone ground round. Beef ribs salami biltong venison short loin kielbasa, t-bone capicola flank alcatra ham hock ribeye.</p>
+                <a data-sketch-symbol-instance="buttons/basic" class="button" href="#!">Read more</a>
+
+        			</div> <!-- /.author-card-bio -->
+        		</div> <!-- /.author-card-info -->
+
+        	</div> <!-- /.author-card -->
+
+        </section><!--/itemtype=CreativeWork-->
+
+    </section>
+
+  </body>
+</html>
